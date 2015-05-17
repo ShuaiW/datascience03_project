@@ -10,8 +10,8 @@ Engineer the datasets to get a tidy dataset for later analysis
 run_analysis.R
 
 #### How scripts works
-The comments I put in the R scripts are explainatory, but here is a brief.
-1 Reads in the train and test set use rbind() to combine them
+###### The comments I put in the R scripts are explainatory, but here is a brief.
+###### 1. Reads in the train and test set use rbind() to combine them
 2 Extracts only the measurement on mean and std. I used a pattern match function grepl() to create a logical vector, which is then used to select the measures (79 in my case)
 3 Label the dataset with the feature names extracted from "feature.txt". Note this stepped happened before step 2 (otherwise impossible to pattern match mean or std)
 4 First I combined the labels from training and test. then I used one apply function to mapping from numbers (1, 2, etc.) to the name of the activities ("WALKING", "WALKING_UPSTAIRS", etc.)
