@@ -31,15 +31,15 @@ subject_train <- scan("../train/subject_train.txt")
 subject_test <- scan("../test/subject_test.txt")
 subject <- c(subject_train, subject_test)
 
-tidy <- cbind(X_mean_std, subject)
-tidy <- cbind(tidy, y_label)
+combined <- cbind(X_mean_std, subject)
+combined <- cbind(tidy, y_label)
 
-aggregated <- aggregate(tidy[, 1:79], by=list(subject, y_label), FUN=mean)
+tidy <- aggregate(tidy[, 1:79], by=list(subject, y_label), FUN=mean)
 
 # Makes columns names more readable
-colnames(aggregated)[1:2] <- c("subject", "activity")
-colnames(aggregated)[3:81] <- paste(colnames(aggregated)[3:81], "ave", sep = ".")
+colnames(tidy)[1:2] <- c("subject", "activity")
+colnames(tidy)[3:81] <- paste(colnames(tidy)[3:81], "ave", sep = ".")
 
 
 # Writes the tidy data to disk
-write.table(aggregated, "aggregated.txt", row.name = FALSE)
+write.table(tidy, "tidy.txt", row.name = FALSE)
