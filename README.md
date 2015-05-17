@@ -1,2 +1,2 @@
-# datascience03_project
-project: getting and cleaning data
+# Project: Getting and Cleaning Data - Wearable Data
+
