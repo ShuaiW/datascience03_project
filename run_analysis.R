@@ -42,4 +42,4 @@ colnames(tidy)[3:81] <- paste(colnames(tidy)[3:81], "ave", sep = ".")
 
 
 # Writes the tidy data to disk
-write.table(tidy, "tidy.txt", row.name = FALSE)
+write.table(tidy, "tidy.csv", row.name = FALSE)

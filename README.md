@@ -23,3 +23,5 @@ run_analysis.R
 
 6. Writes the dataset.
 
+#### Result
+tidy.txt
